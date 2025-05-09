@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interestellar Love | Inicio</title>
+
+  <!-- Google Fonts & Iconify -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
+  <!-- Tus estilos -->
+  <link rel="stylesheet" href="./css/theme.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="logo">iii Loveeee</div>
+    <ul class="nav-links">
+      <li><a href="./index.html" class="active">Inicio</a></li>
+      <li><a href="./nav/album.html">Álbum</a></li>
+      <li><a href="./nav/constelaciones.html">Constelaciones</a></li>
+      <li><a href="./nav/playlist.html">Playlist</a></li>
+      <li><a href="./nav/contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- FONDO ESTRELLADO -->
+  <div id="particles-js" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;"></div>
+
+  <!-- ÚNICA SECCIÓN: CONTADOR -->
+  <section id="counter">
+    <h2>Tiempo juntos</h2>
+    <div class="time-container">
+      <div><span id="days">0</span><small>Días</small></div>
+      <div><span id="hours">0</span><small>Horas</small></div>
+      <div><span id="minutes">0</span><small>Minutos</small></div>
+      <div><span id="seconds">0</span><small>Segundos</small></div>
+    </div>
+  </section>
+
+  <!-- Quotes flotantes -->
+  <div id="quotes-container"></div>
+
+  <!-- Scripts -->
+  <!-- Particles.js desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.3/tsparticles.min.js"></script>
+  <script>
+    // configuración reducida inline:
+    tsParticles.loadJSON("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "size": { "value": 2 },
+        "move": { "enable": true, "speed": 0.3 },
+        "line_linked": { "enable": false }
+      },
+      "interactivity": { "events": { "onHover": { "enable": false } } }
+    });
+  </script>
+
+  <script src="./js/counter.js"></script>
+  <script src="./js/quote.js"></script>
+  <script src="./js/star.js"></script>
+</body>
+</html>
+

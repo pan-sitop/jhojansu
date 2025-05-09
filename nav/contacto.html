@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interestellar Love | Contacto</title>
+
+  <!-- Tipografías e iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="logo">iii loveee</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="./album.html" class="active">Álbum</a></li>
+      <li><a href="./constelaciones.html">Constelaciones</a></li>
+      <li><a href="./playlist.html">Playlist</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+
+<section id="contact-form">
+  <h2>Envíame un mensaje</h2>
+  <div class="contact-box">
+    <textarea id="whatsapp-text" placeholder="Escribe tu mensaje aquí…"></textarea>
+    <button id="send-whatsapp">Enviar por WhatsApp</button>
+  </div>
+</section>
+
+
+<script>
+  document.getElementById('send-whatsapp').addEventListener('click', () => {
+    const number = '+59160655599'; // <- Pon aquí tu número sin + ni espacios (ej. 591XXXXXXX)
+    const text = document.getElementById('whatsapp-text').value.trim();
+    if (!text) {
+      alert('Por favor, escribe un mensaje antes de enviar.');
+      return;
+    }
+    const url = `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+  });
+</script>
+<script src="../js/star.js"></script>
+</body>
+</html>

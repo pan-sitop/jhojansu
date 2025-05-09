@@ -1,0 +1,191 @@
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 1rem 2rem;
+  position: sticky; top: 0; background: rgba(10,15,34,0.9);
+  z-index: 100;
+}
+.nav-links { list-style: none; display: flex; gap: 1.5rem; }
+.nav-links a {
+  text-decoration: none; color: var(--text-light);
+  font-family: var(--font-heading); text-transform: uppercase;
+}
+.nav-links a.active,
+.nav-links a:hover { color: var(--accent-pink); }
+
+/* Hero */
+#hero {
+  position: relative; height: 80vh; overflow: hidden;
+}
+#particles-js { position: absolute; width: 100%; height: 100%; }
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center; top: 50%; transform: translateY(-50%);
+}
+.hero-content h1 {
+  font-family: var(--font-heading); font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.hero-content p { font-size: 1.2rem; color: var(--text-muted); }
+
+/* Contador */
+#counter {
+  text-align: center; padding: 3rem 1rem;
+}
+.time-container {
+  display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;
+}
+.time-container div {
+  background: rgba(255,255,255,0.1); padding: 1rem 1.5rem;
+  border-radius: 8px; min-width: 80px;
+}
+.time-container span {
+  display: block; font-size: 2rem; font-family: var(--font-heading);
+}
+.time-container small { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Botón lanzar estrella */
+#launch-star {
+  position: fixed; bottom: 2rem; right: 2rem;
+  background: var(--accent-purple); border: none;
+  padding: 0.8rem; border-radius: 50%; cursor: pointer;
+  box-shadow: 0 0 10px var(--accent-purple);
+}
+#launch-star .iconify { font-size: 1.5rem; color: var(--text-light); }
+
+/* Quotes flotantes */
+#quotes-container {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; overflow: hidden; z-index: 1;
+}
+
+/* Galería (album.html) */
+.gallery {
+  display: grid; grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+  gap: 1rem; padding: 2rem;
+}
+.gallery img {
+  width: 100%; border-radius: 8px;
+  transition: transform .3s;
+}
+.gallery img:hover { transform: scale(1.05); }
+
+/* Canvas (constelaciones.html) */
+#star-map {
+  display: block; margin: 2rem auto;
+  background: radial-gradient(ellipse at bottom, #1b1e33 0%, #0a0f22 100%);
+  border: 2px solid var(--accent-purple); border-radius: 8px;
+}
+
+/* Playlist */
+.player-container {
+  display: flex; justify-content: center; padding: 2rem;
+}
+
+/* WhatsApp (contacto.html) */
+.whatsapp-btn {
+  position: fixed; bottom: 2rem; left: 2rem;
+  background: var(--accent-pink); color: var(--text-light);
+  padding: 0.8rem 1.2rem; border-radius: 50px;
+  text-decoration: none; font-family: var(--font-heading);
+  display: flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 0 10px var(--accent-pink);
+}
+/* Centrar título en album.html */
+#album h2 {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+/* Estilos para formulario de WhatsApp */
+#contact-form {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+}
+#contact-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.contact-box textarea {
+  width: 100%;
+  height: 150px;
+  padding: 0.75rem;
+  border: 1px solid var(--text-muted);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+.contact-box button {
+  background: var(--accent-pink);
+  color: var(--text-light);
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  cursor: pointer;
+}
+.contact-box button:hover {
+  background: var(--accent-purple);
+}
+/* ——— Quotes flotantes ——— */
+#quotes-container {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; overflow: hidden;
+  z-index: 5;
+}
+
+.quote {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--accent-pink);
+  text-shadow: 0 0 8px var(--accent-pink);
+  animation: floatQuote 8s ease-out forwards;
+}
+
+@keyframes floatQuote {
+  0%   { opacity: 0; transform: translate(0, 0) scale(0.8); }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(20px, -20px) scale(1.2); }
+}
+
+/* ——— Estrellas fugaces mejoradas ——— */
+.shooting-star {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-pink);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px var(--accent-pink));
+  opacity: 1;
+  animation: shooting 10s ease-out forwards;
+  /* cada estrella rotará un poco para simular cola */
+  transform: rotate(45deg);
+}
+
+@keyframes shooting {
+  0% {
+    opacity: 1;
+    transform: translate(0,0) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    /* recorremos toda la pantalla en diagonal */
+    transform: translate(100vw, 100vh) rotate(45deg);
+  }
+}

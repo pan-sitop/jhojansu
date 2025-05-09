@@ -1,0 +1,13 @@
+:root {
+    /* Colores */
+    --bg-dark: #0a0f22;
+    --accent-purple: #6e44ff;
+    --accent-pink: #ff497c;
+    --text-light: #f4f4f9;
+    --text-muted: #b0b0c1;
+  
+    /* Tipografías */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Raleway', sans-serif;
+  }
+  
